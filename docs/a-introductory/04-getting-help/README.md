@@ -190,9 +190,13 @@ Mark challenges using a ✅ once they are finished.
 
 *Describe in your own words what the `free` command does. Give an example and a partial output.*
 
+Display amount of free and used memory in the system
+
 ### ❌ The id command
 
 *Describe in your own words what the `id` command does. Give an example and a partial output.*
+
+print real and effective user and group IDs
 
 ### ❌ The tree command
 
