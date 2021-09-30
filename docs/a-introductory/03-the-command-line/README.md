@@ -293,24 +293,32 @@ It prints the current user name to the terminal
 
 Displays the current up-time for the user en the average load
 
-### ❌ Help on ls
+### ✅ Help on ls
 
 **`ls` can be used to list the files and directories in Linux. If you execute the command `ls -h` you do not get any help about the command. How come? What does `ls -h` actually do?**
 
+heman readable, It print sizes like 1K 234M 2G etc.
 
-
-### ❌ Hidden files
+### ✅ Hidden files
 
 **Linux harbors some hidden files which are not automatically listed when executing `ls`. Find out how to list hidden files. How can we recognize hidden files?**
 
-### ❌ The man command
+ls -a --> you can recognize them because there is a . before the file
+
+### ✅ The man command
 
 **Describe in your own words what the `man` command does.**
 
-### ❌ What shells are available
+It gives your more info about a typical command.
+
+### ✅ What shells are available
 
 **Check the Internet on how you can get a list of all available shells on your system.**
 
-### ❌ What date is it
+cat /etc/shells
+
+### ✅ What date is it
 
 **How would you request the current date and time via the terminal?**
+
+the command date

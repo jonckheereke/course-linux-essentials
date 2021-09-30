@@ -23,6 +23,7 @@ The most used commands inside the man pages are listed in the next table.
 | `SPACE` | Go down a page |
 | `/keyword` | Search for keyword |
 | `n` | Find next search item |
+| `N` | Find previous search item |
 | `g` | Goto beginning |
 | `G` | Goto end |
 | `h` | Show help |
@@ -48,15 +49,15 @@ Sometimes configuration files also have man pages. Configuration files (sometime
 
 There are thousands of man pages on a typical Linux distribution. To organize all of these man pages, the pages are **categorized by sections**, much like each individual man page is broken into sections.
 
-1) Executable programs or shell commands
-2) System calls (functions provided by the kernel)
-3) Library calls (functions within program libraries)
-4) Special files (usually found in /dev)
-5) File formats and conventions, e.g. /etc/passwd
-6) Games
-7) Miscellaneous (including macro packages and conventions)
-8) System administration commands (usually only for root)
-9) Kernel routines [Non standard]
+1. Executable programs or shell commands
+1. System calls (functions provided by the kernel)
+1. Library calls (functions within program libraries)
+1. Special files (usually found in /dev)
+1. File formats and conventions, e.g. /etc/passwd
+1. Games
+1. Miscellaneous (including macro packages and conventions)
+1. System administration commands (usually only for root)
+1. Kernel routines [Non standard]
 
 When you use the man` command, it searches each of these sections **in order** until it finds the first "match".
 
@@ -192,6 +193,10 @@ Mark challenges using a ✅ once they are finished.
 
 Display amount of free and used memory in the system
 
+total        used        free      shared     buff/cache  available
+8267356     6387916     1650088    17720      229352      1745708
+15491452    240864      15250588
+
 ### ❌ The id command
 
 *Describe in your own words what the `id` command does. Give an example and a partial output.*
@@ -237,3 +242,14 @@ print real and effective user and group IDs
 ### ❌ The printenv command
 
 *Describe in your own words what the `printenv` command does.*
+
+print environment in parts of all
+
+### ❌ IP Address
+
+*Find the IP address of your WiFi interface. What command did you use?*
+
+
+### ❌ IP of Sivir Server
+
+*What is the IP address of the internal server `sivir.devbit.be`? Make sure you are connected to the `Devbit` network.*
