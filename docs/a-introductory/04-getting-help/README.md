@@ -203,9 +203,13 @@ total        used        free      shared     buff/cache  available
 
 print real and effective user and group IDs
 
+uid=1000(robin) gid=1000(robin) groups=1000(robin),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev)
+
 ### ❌ The tree command
 
 *Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
+
+
 
 ### ❌ The which command
 
