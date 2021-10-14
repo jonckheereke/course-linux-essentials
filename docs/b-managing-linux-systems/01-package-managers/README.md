@@ -275,6 +275,9 @@ Mark challenges using a ✅ once they are finished.
 
 *Run it once it's installed. What does it do ?*
 
+http://ftp.nl.debian.org/debian/pool/main/c/cowsay/cowsay_3.03+dfsg2-8_all.deb
+
+
 ### ❌ Nmap
 
 *Install the `nmap` package using `apt`.*
