@@ -274,9 +274,10 @@ Mark challenges using a ✅ once they are finished.
 *Download the `.deb` package for `cowsay` and install it using `dpkg`. You can find the package at [https://packages.debian.org/sid/all/cowsay/download](https://packages.debian.org/sid/all/cowsay/download).*
 
 *Run it once it's installed. What does it do ?*
+'''text
+You can display a animal that say what you want
 
-http://ftp.nl.debian.org/debian/pool/main/c/cowsay/cowsay_3.03+dfsg2-8_all.deb
-
+'''
 
 ### ❌ Nmap
 
