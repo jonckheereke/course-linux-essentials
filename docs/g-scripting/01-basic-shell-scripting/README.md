@@ -608,6 +608,8 @@ Mark challenges using a ✅ once they are finished.
 
 *Create a script that output the date every 10 seconds. Use the `sleep` command to wait between calls to the `date` command.*
 
+--> date file in project/scripts
+
 ### ❌ Available Memory
 
 *Output the available system memory together with the current date in the following format:*
