@@ -258,7 +258,7 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Locate
+### ✅ Locate
 
 *Install the `locate` command and update the index database.*
 
@@ -268,15 +268,28 @@ Mark challenges using a ✅ once they are finished.
 * the configuration file `ssh_config`
 * `auth.log`
 
-### ❌ Python man-pages
+It don't work to install the update command.
+
+### ✅ Python man-pages
 
 *Use the `whereis` tool to determine the location of the man-pages of `python`.*
 
-### ❌ Python man-pages
+The man page cannot be fount, It outputs an empty line.
+
+```bash
+whereis -m python
+```
+
+### ✅ Python man-pages
 
 *Use the `whereis` tool to determine the location of the `find` binary.*
 
-### ❌ Which
+```bash
+robin@DESKTOP-SPF3UGS:~$ whereis -b find
+find: /usr/bin/find /mnt/c/Windows/system32/find.exe /mnt/d/Git/usr/bin/find.exe
+```
+
+### ✅ Which
 
 *What is the location of the following commands for the current user:*
 
@@ -284,31 +297,82 @@ Mark challenges using a ✅ once they are finished.
 * `locate`
 * `fdisk`
 
+```bash
+which passwd
+/usr/bin/passwd
+
+which locate
+/usr/bin/locate
+
+which fdisk
+/usr/sbin/fdisk
+```
+
 *Why are the location of `passwd` and `fdisk` different? What is `fdisk` used for?*
+
+The fdisk is used for disk partitions it is a dangerous file so they placed them in the sbin folder.
 
 ### Use find for the following challenges
 
 Make sure to redirect the `permission denied` errors to `/dev/null` for all searches unless specified otherwise.
 
-#### ❌ kernel.log
+#### ✅ kernel.log
 
 *Find the file `kernel.log`.*
 
-#### ❌ .bashrc
+Cannot be found.
+
+#### ✅ .bashrc
 
 *Find the files `.bashrc`.*
 
-#### ❌ System Configuration Files
+```bash
+robin@DESKTOP-SPF3UGS:~$ find / -type f -name ".bashrc" 2>/dev/null
+/etc/skel/.bashrc
+/home/barry/.bashrc
+/home/jay/.bashrc
+/home/jens/.bashrc
+/home/ritch/.bashrc
+/home/robin/.bashrc
+/home/steve/.bashrc
+```
+
+#### ✅ System Configuration Files
 
 *Search for files that end with the extension `.conf` and contain a filename with the keyword `system` in the `/etc` directory.*
+
+```bash
+robin@DESKTOP-SPF3UGS:~$ find /etc -type f -name "*system*.conf" 2>/dev/null
+/etc/systemd/system.conf
+```
 
 #### ❌ User Readable Files
 
 *What option can we use on `find` to make sure the current user can read the file? Don't use the `-perm` option. There is a better option. Give a nice example.*
 
-#### ❌ Altered Log Files
+#### ✅ Altered Log Files
 
 *Find all log files in `/var/log` that were modified in the last 24 hours. Make sure to only include files and not directories. Now extend the command to perform a long listing human readable `ls` for each file.*
+
+```bash
+robin@DESKTOP-SPF3UGS:~$ find /var/log -type f -mtime -1 2>/dev/null
+/var/log/apt/eipp.log.xz
+/var/log/apt/history.log
+/var/log/apt/term.log
+/var/log/btmp
+/var/log/dpkg.log
+/var/log/lastlog
+```
+
+```bash
+robin@DESKTOP-SPF3UGS:~$ find /var/log -type f -mtime -1 -exec ls -lh '{}' \; 2>/dev/null
+-rw-r--r-- 1 root root 25K Nov 15 09:57 /var/log/apt/eipp.log.xz
+-rw-r--r-- 1 root root 9.0K Nov 15 09:57 /var/log/apt/history.log
+-rw-r----- 1 root adm 46K Nov 15 09:57 /var/log/apt/term.log
+-rw-rw---- 1 root utmp 768 Nov 15 10:13 /var/log/btmp
+-rw-r--r-- 1 root root 88K Nov 15 09:57 /var/log/dpkg.log
+-rw-rw-r-- 1 root utmp 287K Nov 15 10:12 /var/log/lastlog
+```
 
 #### ❌ Steal All Logs
 

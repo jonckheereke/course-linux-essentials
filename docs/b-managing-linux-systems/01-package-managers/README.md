@@ -269,7 +269,7 @@ Find all the info you need in the man-pages. Document the commands you used for 
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Cowsay
+### ✅ Cowsay
 
 *Download the `.deb` package for `cowsay` and install it using `dpkg`. You can find the package at [https://packages.debian.org/sid/all/cowsay/download](https://packages.debian.org/sid/all/cowsay/download).*
 
@@ -277,8 +277,19 @@ Mark challenges using a ✅ once they are finished.
 
 '''text
 You can display a animal that say what you want
-
 '''
+
+```bash
+cowsay hello
+ _______
+< hello >
+ -------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
 
 ### ❌ Nmap
 
@@ -286,7 +297,7 @@ You can display a animal that say what you want
 
 *Port scan the server `sivir.devbit.be`. Make sure you are connected to the `Devbit` network. What services are running on this machine?*
 
-### ❌ NodeJS
+### ✅ NodeJS
 
 *Install `snap` using `apt`. Next use `snap` to install `nodejs`.*
 
@@ -300,6 +311,11 @@ console.log("Hello World from JavaScript");
 
 *Install the `dhcpdump` and try to capture some DHCP traffic in the network. Work together with another student and try to capture the DHCP request of his/her laptop. Find out what the MAC Address is and check it using the `ip` or `ipconfig` tool.*
 
-### ❌ MQTT
+### ✅ MQTT
 
 *Find a command line tool that allows you to publish messages to an MQTT broker. Use it to send your name to the topic `linux/students`. Use the broker `mqtt.devbit.be`.*
+
+```bash
+sudo apt install mosquitto-clients
+mosquitto_pub --topic linux/students -h mqtt.devbit.be -m "Jonckheere Robin"
+```

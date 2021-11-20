@@ -187,53 +187,133 @@ Find all the info you need in the man-pages. Make sure to comment the commands y
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ The free command
+### ✅ The free command
 
 *Describe in your own words what the `free` command does. Give an example and a partial output.*
 
 Display amount of free and used memory in the system
 
+```bash
 total        used        free      shared     buff/cache  available
 8267356     6387916     1650088    17720      229352      1745708
 15491452    240864      15250588
+```
 
-### ❌ The id command
+### ✅ The id command
 
 *Describe in your own words what the `id` command does. Give an example and a partial output.*
 
 print real and effective user and group IDs
 
+```bash
 uid=1000(robin) gid=1000(robin) groups=1000(robin),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev)
+```
 
-### ❌ The tree command
+### ✅ The tree command
 
 *Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
 
+The tree command will print content or directories in a tree format.
 
+Example: tree -a
 
-### ❌ The which command
+```bash
+── .wget-hsts
+├── .zcompdump
+├── 2021-10-28-backup.zip
+├── cowsay_3.03+dfsg2-8_all.deb
+├── errors.log
+├── hello
+├── projects
+│   └── scripts
+│       └── date
+└── test
+
+```
+
+### ✅ The which command
 
 *Describe in your own words what the `which` command does. What is the result for `pwd` ?*
 
-### ❌ The file command
+It prints where the command is located.
+
+```bash
+/home/robin
+```
+
+### ✅ The file command
 
 *Describe in your own words what the `file` command does. What is the result for `~/.bashrc` ?*
 
-### ❌ The type command
+It gives your back which type your given file is
+
+```bash
+/home/robin/.bashrc: ASCII text
+```
+
+### ✅ The type command
 
 *Describe in your own words what the `type` command does. What is the result for `ls` and what is the result for `g++` ?*
 
-### ❌ Counting lines and words
+type will print how the given name will be used as a command name.
+
+```bash
+ls is aliased to `ls --color=auto'
+```
+
+```bash
+g++ is /usr/bin/g++
+```
+
+### ✅ Counting lines and words
 
 *What command can be used to count lines and words in text? Give an example and explain the output.*
 
-### ❌ The wget command
+You can use the wc command
+"print newline, word, and byte counts for each file"
+
+```bash
+93  278 1782 hello
+```
+
+### ✅ The wget command
 
 *How can you download a file from the Internet using the command line?. Find a file online to use it on and demonstrate its usage.*
 
-### ❌ The dmesg command
+You can download it by placing the wget command before the name.
+
+```bash
+wget github.com
+--2021-11-15 09:42:13--  http://github.com/
+Resolving github.com (github.com)... 140.82.121.4
+Connecting to github.com (github.com)|140.82.121.4|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://github.com/ [following]
+--2021-11-15 09:42:14--  https://github.com/
+Connecting to github.com (github.com)|140.82.121.4|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+index.html                     [ <=>                                    ] 270.48K  --.-KB/s    in 0.09s
+
+2021-11-15 09:42:14 (2.86 MB/s) - ‘index.html’ saved [276971]
+```
+
+### ✅ The dmesg command
 
 *Describe in your own words what the `dmesg` command does. Give an example and a partial output.*
+
+With the dmesg you can print or control the kernel ring buffer.
+
+```bash
+dmesg
+[    0.037700]  Microsoft 4.4.0-19041.1237-Microsoft 4.4.35
+[    0.194794] <3>init: (1) ERROR: ConfigInitializeCommon:665: Failed to mount /usr/lib/wsl/drive
+[    0.194801] : 19
+[    0.194960] <3>init: (1) ERROR: ConfigInitializeCommon:665: Failed to mount /usr/lib/wsl/lib
+[    0.194964] 19
+```
 
 ### ❌ Checksums
 
@@ -243,17 +323,23 @@ uid=1000(robin) gid=1000(robin) groups=1000(robin),4(adm),20(dialout),24(cdrom),
 
 *What is the use of this hash?*
 
-### ❌ The printenv command
+### ✅ The printenv command
 
 *Describe in your own words what the `printenv` command does.*
 
 print environment in parts of all
 
-### ❌ IP Address
+### ✅ IP Address
 
 *Find the IP address of your WiFi interface. What command did you use?*
 
+Use the "ip addr" command to find your ip-adress
 
-### ❌ IP of Sivir Server
+### ✅ IP of Sivir Server
 
 *What is the IP address of the internal server `sivir.devbit.be`? Make sure you are connected to the `Devbit` network.*
+
+```bash
+dig +short sivir.devbit.be
+172.16.10.5
+```

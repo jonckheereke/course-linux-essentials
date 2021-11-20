@@ -604,21 +604,36 @@ Solve the challenges by creating small bash scripts. Place the bash scripts here
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Log the Date
+### ✅ Log the Date
 
 *Create a script that output the date every 10 seconds. Use the `sleep` command to wait between calls to the `date` command.*
 
 --> date file in project/scripts
 
-### ❌ Available Memory
+```bash
+while [ true ]
+do
+  date=$(date +%F)
+  echo ${date}
+  sleep 10s
+done
+```
+
+### ✅ Available Memory
 
 *Output the available system memory together with the current date in the following format:*
 
-```
+```bash
 [Thu 14 May 2020 11:12:55 AM CEST] MemAvailable:   28439572 kB
 ```
 
 *The available memory can be found in the file `/proc/meminfo`. Use the `grep` tool to filter out the line with MemAvailable.*
+
+```bash
+date=$(date +%F" "%T" "%p" "%Z)
+memory=$(grep MemFree /proc/meminfo)
+echo "[ ${date} ] ${memory}"
+```
 
 ### ❌ Fetching Github Keys
 
@@ -645,6 +660,11 @@ Fetching Keys
 
 *Create a script that filters DHCP network traffic and outputs matching MAC-Addresses, IP-Addresses and Hostnames.*
 
-### ❌ Backups
+### ✅ Backups
 
 *Choose a directory on your system (best to choose one in your home-dir). Create a script that archives this directory in a `.tar.gz` tarball file. Add a timestamp in the name of the output file.*
+
+```bash
+now=$(date '+%F_%H'h'-%M'm'-%S's'')
+tar -czvf "oefening_${now}.tar.gz" $HOME/oefening
+```

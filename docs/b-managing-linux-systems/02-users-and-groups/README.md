@@ -373,32 +373,81 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ System user accounts
+### ✅ System user accounts
 
 *Try to login to the `daemon` system user account. Use `sudo su daemon`. What does it display as a message ? What application is outputting this message ? Run that application and prove it.*
 
-### ❌ Creating group with id
+```bash
+sudo su daemon
+This account is currently not available.
+```
+
+I think that the nologin command output this message.
+
+```bash
+nologin
+This account is currently not available.
+```
+
+### ✅ Creating group with id
 
 *Create a group called `hackers` with the specific group id `1337`. Now create two users (students from the class) and add them both the group.*
+
+```bash
+sudo addgroup hackers --gid 1337
+sudo adduser Jens -- admin
+sudo adduser Jay  -- admin
+sudo adduser Jens hackers
+sudo adduser Jay hackers
+```
 
 ### ❌ Difference false and nologin
 
 *Some user entries are showing `/bin/false` as the shell command. Do some research and explain what the difference is with `/usr/sbin/nologin`.*
 
-### ❌ The auth.log file 
+### ✅ The auth.log file
 
 *What does the file `/log/var/auth.log` track? Provide an example of a command that shows entries being added to the log after you executed the command. Include the entry here that was added to the file.*
 
-### ❌ Locking out Steve
+It will tracks user logins and the authentication that is used.
+
+### ✅ Locking out Steve
 
 *Create a new user steve and set a password for the user. Login to the `steve` account using `su` to make sure it works.*
 
 *Now lock the user account and make sure there is no way anyone can login as `steve`, not even `root`*
 
-### ❌ Zsh Shell
+```bash
+sudo adduser steve
+[sudo] password for robin:
+Adding user `steve' ...
+Adding new group `steve' (1007) ...
+Adding new user `steve' (1005) with group `steve' ...
+
+robin@DESKTOP-SPF3UGS:~$ sudo passwd -l steve
+passwd: password expiry information changed.
+
+robin@DESKTOP-SPF3UGS:~$ sudo usermod --expiredate 1 steve
+
+robin@DESKTOP-SPF3UGS:~$ sudo su steve
+Your account has expired; please contact your system administrator
+su: Authentication failure
+```
+
+### ✅ Zsh Shell
 
 *Install the zsh shell on your system. Now change your own shell to `zsh`. Make sure to do this in such a way that a new session will also use `zsh`.*
 
-### ❌ Semester Account
+```bash
+sudo apt install zsh
+sudo usermod --shell /bin/zsh robin
+```
+
+### ✅ Semester Account
 
 *Create a new account for an exchange student called `maggie`. Make sure the account can only be used until 31st of January of the next year. Basically only for this semester*.
+
+```bash
+sudo adduser maggie
+sudo usermod --expiredate 2022-01-31 maggie
+```

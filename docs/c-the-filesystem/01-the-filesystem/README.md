@@ -634,35 +634,104 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Authentication Log
+### ✅ Authentication Log
 
 *There is a file on the system that logs authentication changes and failures. Can you guess where it can be found? Provide the path to the file.*
 
-### ❌ Apt Source List
+You can find the file here
+
+```bash
+/var/log/auth.log
+```
+
+### ✅ Apt Source List
 
 *The apt tool uses a configuration file which specifies in which repositories it should look for packages. Its called the apt `sources.list` file. Can you guess where it can be found? Provide the path to the file.*
 
-### ❌ Tmp Filesystem
+```bash
+/etc/apt/sources.list
+```
+
+### ✅ Tmp Filesystem
 
 *Create a file called `hello` in `/tmp`. Restart your linux distro using `reboot`. Where is the file? What happened?*
 
-### ❌ Timestamps
+```bash
+touch hello
+robin@DESKTOP-SPF3UGS:/tmp$ reboot
+```
+
+The file is gone. This is because of it was inside the tmp file.
+
+### ✅ Timestamps
 
 *Create a file called `first-of-many` in your home directory. Use `nano` to add some content to the file. Now list the details of the file such as the size and when it was last modified.*
 
-### ❌ No space for spaces
+```bash
+touch first-of-many
+nano touch first-of-many
+ls -l
+```
+
+output
+
+```bash
+-rw-r--r-- 1 robin robin   33 Oct 16 10:48 first-of-many
+```
+
+### ✅ No space for spaces
 
 *Try to create a file called `second try` (with the space included) using the command `touch second try` in your home directory. What happened? Why did this happen? How can you actually achieve creating a file with a space in its name?*
 
-### ❌ The root
+```bash
+touch second try
+```
+
+```bash
+It makes 2 files: 
+-rw-r--r-- 1 robin robin    0 Oct 16 11:01 second
+-rw-r--r-- 1 robin robin    0 Oct 16 11:01 try
+```
+
+```bash
+touch second try
+```
+
+If you use a backslash you have this:
+
+```bash
+touch second\ try
+-rw-r--r-- 1 robin robin    0 oct 16 11:12 'second try'
+```
+
+### ✅ The root
 
 *Try to create a directory `/backups` (under the root of the filesystem). Why is it failing?*
 
+You have no permissions to write under the root.
+
 *Now use `sudo` to create the directory. Try creating a file called `README.md` within this `/backups` directory. Can you do it? Why / Why not?*
 
-### ❌ Bash RC
+```bash
+mkdir backups
+cd backups
+touch README.md
+```
+
+You still have no permissions. you need to use Sudo.
+
+### ✅ Bash RC
 
 *In your home directory you will find a file called `.bashrc`. Create a backup of that file called `.bashrc.bak`.*
+
+```bash
+cp .bashrc .bashrc.bak
+```
+
+```bash
+-rw-r--r-- 1 robin robin   3771 Feb 26  2021 .bashrc
+-rw-r--r-- 1 robin robin   3771 Oct 16 11:25 .bashrc.bak
+```
 
 ### ❌ Sym Linking
 
