@@ -377,3 +377,7 @@ robin@DESKTOP-SPF3UGS:~$ find /var/log -type f -mtime -1 -exec ls -lh '{}' \; 2>
 #### ❌ Steal All Logs
 
 *Create a directory `logs` in `/tmp` and copy all `*.log` files you can find on the system to that location.*
+
+#### ❌ Markdown README files
+
+*Find all `README.md` files on your system. Can you make it so the case of the filename does not matter? In other words, you should also be able to find `readme.md`, `Readme.md`, `readme.MD`, ...*
